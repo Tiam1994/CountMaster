@@ -18,7 +18,11 @@ namespace Runtime.GatesLogic
 			GenerateRandomNumber();
 		}
 
-		private void Initialize() => _gateCollider = GetComponent<BoxCollider>();
+		private void Initialize()
+		{
+			_gateCollider = GetComponent<BoxCollider>();
+			_gateCollider.isTrigger = true;
+		}
 
 		private void GenerateRandomNumber()
 		{

@@ -1342,6 +1342,8 @@ GameObject:
   - component: {fileID: 4037897831699592365}
   - component: {fileID: 7560470979890417557}
   - component: {fileID: 1319376387063327784}
+  - component: {fileID: 3724401515322698630}
+  - component: {fileID: 7831441005438875587}
   m_Layer: 0
   m_Name: PlayerStickman
   m_TagString: Untagged
@@ -1364,7 +1366,7 @@ Transform:
   - {fileID: 1129870303694994575}
   - {fileID: 4587617569633802154}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &7560470979890417557
 Rigidbody:
@@ -1416,6 +1418,39 @@ CapsuleCollider:
   m_Height: 0.4
   m_Direction: 1
   m_Center: {x: 0, y: 0.15, z: 0}
+--- !u!95 &3724401515322698630
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8101054400320624060}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b71a8dd795984b246949d24c6b0bc1a7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &7831441005438875587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8101054400320624060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df77fdb7cb83fba4aa1941fa466b9fd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8333477699412513429
 GameObject:
   m_ObjectHideFlags: 0
