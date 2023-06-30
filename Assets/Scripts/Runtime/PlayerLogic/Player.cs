@@ -23,7 +23,7 @@ namespace Runtime.PlayerLogic
 				collider.transform.parent.GetComponent<Gates>().DeactivateGates();
 
 				int numberOfNewStickmans = GetNumberOfNewStickmens(collider.GetComponent<Gate>());
-				_stickmansGroup.MakeStickmans(_stickmansGroup.NumberOfStickmans, numberOfNewStickmans);
+				_stickmansGroup.MakeStickmans(_stickmansGroup.NumberOfStickmans, numberOfNewStickmans, Quaternion.identity);
 			}
 		}
 

@@ -24,11 +24,11 @@ namespace Runtime.Stickmans
 			}
 		}
 
-		public void MakeStickmans(int currentNumberOfStickmans, int number)
+		public void MakeStickmans(int currentNumberOfStickmans, int number, Quaternion rotation)
 		{
 			for (int i = currentNumberOfStickmans; i < number; i++)
 			{
-				Stickman stickman = Instantiate(_stickmanPrefab, transform.position, Quaternion.identity, transform).GetComponent<Stickman>();
+				Stickman stickman = Instantiate(_stickmanPrefab, transform.position, rotation, transform).GetComponent<Stickman>();
 				_stickmans.Add(stickman);
 			}
 
