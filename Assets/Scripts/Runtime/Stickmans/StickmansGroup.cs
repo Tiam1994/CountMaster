@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 
 namespace Runtime.Stickmans
@@ -30,18 +31,20 @@ namespace Runtime.Stickmans
 				Stickman stickman = Instantiate(_stickmanPrefab, transform.position, Quaternion.identity, transform).GetComponent<Stickman>();
 				_stickmans.Add(stickman);
 			}
+
+			FormatStickmans();
 		}
 
-		private void FormatStickmans(Transform parent, int firstStickmanIndex)
+		private void FormatStickmans()
 		{
-			for (int i = firstStickmanIndex; i < parent.childCount; i++)
+			for (int i = 0; i < transform.childCount; i++)
 			{
 				var x = _distanceFactor * Mathf.Sqrt(i) * Mathf.Cos(i * _radius);
 				var z = _distanceFactor * Mathf.Sqrt(i) * Mathf.Sin(i * _radius);
 
 				var NewPos = new Vector3(x, 0, z);
 
-				//parent.transform.GetChild(i).DOLocalMove(NewPos, 0.5f).SetEase(Ease.OutBack);
+				transform.transform.GetChild(i).DOLocalMove(NewPos, 0.5f).SetEase(Ease.OutBack);
 			}
 		}
 	}

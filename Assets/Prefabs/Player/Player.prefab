@@ -47,6 +47,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _stickmanPrefab: {fileID: 8101054400320624060, guid: 04e33952f5341864484e839f044c0692, type: 3}
   _stickmans: []
+  _distanceFactor: 0.091
+  _radius: 1
 --- !u!1 &7997469047035038793
 GameObject:
   m_ObjectHideFlags: 0
