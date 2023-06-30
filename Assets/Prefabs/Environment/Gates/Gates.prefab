@@ -111,6 +111,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Gate Right
       objectReference: {fileID: 0}
+    - target: {fileID: 7097706229084900113, guid: 17b8dee5a741ea44693373a205603332, type: 3}
+      propertyPath: _isMultiply
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7343947604012226457, guid: 17b8dee5a741ea44693373a205603332, type: 3}
       propertyPath: _isMultiply
       value: 1
