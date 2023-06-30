@@ -7,7 +7,7 @@ namespace Runtime.Stickmans
 		private readonly int _toRunParametrHash = Animator.StringToHash("Is Running");
 		private Animator _animator;
 
-		private void Start() => Initialize();
+		private void OnEnable() => Initialize();
 
 		private void Initialize() => _animator = GetComponent<Animator>();
 

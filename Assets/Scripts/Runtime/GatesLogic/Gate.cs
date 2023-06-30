@@ -12,6 +12,9 @@ namespace Runtime.GatesLogic
 		private BoxCollider _gateCollider;
 		private int _number;
 
+		public int Number { get { return _number; } }
+		public bool IsMultiply { get { return _isMultiply; } }
+
 		private void Start()
 		{
 			Initialize();
