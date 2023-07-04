@@ -3,6 +3,7 @@ using UnityEngine;
 
 namespace Runtime.EnemiesLogic
 {
+	[RequireComponent(typeof(BoxCollider))]
 	public class Enemies : MonoBehaviour
 	{
 		[SerializeField] private StickmansGroup _stickmansGroup;

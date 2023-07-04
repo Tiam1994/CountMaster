@@ -4,12 +4,22 @@ namespace Runtime.PlayerLogic
 {
 	public class PlayerController : MonoBehaviour
 	{
-		[SerializeField] private Transform _playerTransform;
+		[SerializeField] private Player _player;
 		
 		[SerializeField] private float _lateralMoveSpeed;
 		[SerializeField] private float _straightMoveSpeed;
 
 		[SerializeField] private bool _isMoving;
+
+		private void OnEnable()
+		{
+			_player.OnInteractiveWithEnemies += SwitchIsMoving;
+		}
+
+		private void OnDisable()
+		{
+			_player.OnInteractiveWithEnemies -= SwitchIsMoving;
+		}
 
 		private void Update()
 		{
@@ -20,9 +30,21 @@ namespace Runtime.PlayerLogic
 			}
 		}
 
+		private void SwitchIsMoving()
+		{
+			if(_isMoving)
+			{
+				_isMoving = false;
+			}
+			else
+			{
+				_isMoving = true;
+			}
+		}
+
 		private void StraightMove()
 		{
-			_playerTransform.Translate(Vector3.forward * _straightMoveSpeed * Time.deltaTime);
+			_player.transform.Translate(Vector3.forward * _straightMoveSpeed * Time.deltaTime);
 		}
 
 		private void LateralMove()
@@ -33,7 +55,7 @@ namespace Runtime.PlayerLogic
 				float halfScreen = Screen.width / 2;
 				float xPosition = (touch.position.x - halfScreen) / halfScreen;
 
-				_playerTransform.localPosition = new Vector3(xPosition * _lateralMoveSpeed, _playerTransform.localPosition.y, _playerTransform.localPosition.z);
+				_player.transform.localPosition = new Vector3(xPosition * _lateralMoveSpeed, _player.transform.localPosition.y, _player.transform.localPosition.z);
 			}
 		}
 	}

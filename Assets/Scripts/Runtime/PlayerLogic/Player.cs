@@ -2,6 +2,7 @@ using Runtime.Core.Constants;
 using Runtime.GatesLogic;
 using Runtime.Stickmans;
 using UnityEngine;
+using System;
 
 namespace Runtime.PlayerLogic
 {
@@ -9,11 +10,14 @@ namespace Runtime.PlayerLogic
 	{
 		[SerializeField] private StickmansGroup _stickmansGroup;
 
+		public event Action OnInteractiveWithEnemies;
+
 		private void Start() => _stickmansGroup.Initialize();
 
 		private void OnTriggerEnter(Collider collider)
 		{
 			InteractiveWithGate(collider);
+			InteractiveWithEnemies(collider);
 		}
 
 		private void InteractiveWithGate(Collider collider)
@@ -24,6 +28,14 @@ namespace Runtime.PlayerLogic
 
 				int numberOfNewStickmans = GetNumberOfNewStickmens(collider.GetComponent<Gate>());
 				_stickmansGroup.MakeStickmans(_stickmansGroup.NumberOfStickmans, numberOfNewStickmans, Quaternion.identity);
+			}
+		}
+
+		private void InteractiveWithEnemies(Collider collider)
+		{
+			if(collider.tag == ConstantsTag.ENEMIES_TAG)
+			{
+				OnInteractiveWithEnemies?.Invoke();
 			}
 		}
 
